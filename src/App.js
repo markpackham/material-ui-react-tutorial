@@ -24,6 +24,11 @@ import Container from "@material-ui/core/Container";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 
+import AppBar from "@material-ui/core/AppBar";
+import ToolBar from "@material-ui/core/ToolBar";
+import IconButton from "@material-ui/core/IconButton";
+import MenuIcon from "@material-ui/icons/Menu";
+
 const useStyles = makeStyles({
   root: {
     background: "linear-gradient(45deg, #FE6B8B, #999)",
@@ -86,6 +91,17 @@ function App() {
               Learn Material UI in React from
               https://www.youtube.com/watch?v=vyJU9efvUtQ
             </h3>
+            <AppBar color="secondary">
+              <ToolBar>
+                <IconButton>
+                  <MenuIcon></MenuIcon>
+                </IconButton>
+                <Typography variant="h6">
+                  h6 sized Typography in an AppBar in a ToolBar
+                </Typography>
+                <Button>Login</Button>
+              </ToolBar>
+            </AppBar>
             <Typography variant="h2" component="div">
               This is a div with h2 styling
             </Typography>
