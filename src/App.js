@@ -6,9 +6,25 @@ import Button from "@material-ui/core/Button";
 import SaveIcon from "@material-ui/icons/Save";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Checkbox from "@material-ui/core/Checkbox";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
 
 function CheckboxExample() {
-  return <div>Test</div>;
+  const [checked, setChecked] = React.useState(true);
+  return (
+    <FormControlLabel
+      control={
+        <Checkbox
+          checked={checked}
+          icon={<DeleteIcon />}
+          checkedIcon={<SaveIcon />}
+          onChange={(e) => setChecked(e.target.checked)}
+          color="primary"
+          inputProps={{ "aria-label": "secondary checkbox" }}
+        />
+      }
+      label="Testing checkbox"
+    />
+  );
 }
 
 function App() {
