@@ -16,6 +16,13 @@ import {
 } from "@material-ui/core/styles";
 
 import { green, orange } from "@material-ui/core/colors";
+import "fontsource-roboto";
+
+import Typography from "@material-ui/core/Typography";
+import Container from "@material-ui/core/Container";
+
+import Paper from "@material-ui/core/Paper";
+import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles({
   root: {
@@ -29,6 +36,12 @@ const useStyles = makeStyles({
 });
 
 const theme = createMuiTheme({
+  topography: {
+    h2: {
+      fontSize: 36,
+      marginBottom: 15,
+    },
+  },
   palette: {
     primary: {
       main: green[400],
@@ -66,36 +79,54 @@ function CheckboxExample() {
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div className="App">
-        <header className="App-header">
-          <h3>
-            Learn Material UI in React from
-            https://www.youtube.com/watch?v=vyJU9efvUtQ
-          </h3>
-          <ButtonStyled />
-          <TextField
-            // variant="outlined"
-            variant="filled"
-            color="secondary"
-            // type="date"
-            // type="time"
-            type="email"
-            label="The Time"
-            // value="someemail@hotmail.com"
-            placeholder="someEmail@hotmail.com"
-          />
-          <CheckboxExample />
-          <ButtonGroup variant="contained" size="large">
-            <Button startIcon={<SaveIcon />} color="primary">
-              Save
-            </Button>
-            <Button startIcon={<DeleteIcon />} color="secondary">
-              Delete
-            </Button>
-          </ButtonGroup>
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
-      </div>
+      <Container maxWidth="lg">
+        <div className="App">
+          <header className="App-header">
+            <h3>
+              Learn Material UI in React from
+              https://www.youtube.com/watch?v=vyJU9efvUtQ
+            </h3>
+            <Typography variant="h2" component="div">
+              This is a div with h2 styling
+            </Typography>
+            <Typography variant="subtitle1">This is subtitle1</Typography>
+            <Typography variant="body1">This is body1</Typography>
+            <ButtonStyled />
+            <Grid container spacing={4} justify="center">
+              <Grid item>
+                <Paper style={{ height: 75, width: 50 }} />
+              </Grid>
+              <Grid item>
+                <Paper style={{ height: 75, width: 50 }} />
+              </Grid>
+              <Grid item>
+                <Paper style={{ height: 75, width: 50 }} />
+              </Grid>
+            </Grid>
+            <TextField
+              // variant="outlined"
+              variant="filled"
+              color="secondary"
+              // type="date"
+              // type="time"
+              type="email"
+              label="The Time"
+              // value="someemail@hotmail.com"
+              placeholder="someEmail@hotmail.com"
+            />
+            <CheckboxExample />
+            <ButtonGroup variant="contained" size="large">
+              <Button startIcon={<SaveIcon />} color="primary">
+                Save
+              </Button>
+              <Button startIcon={<DeleteIcon />} color="secondary">
+                Delete
+              </Button>
+            </ButtonGroup>
+            <img src={logo} className="App-logo" alt="logo" />
+          </header>
+        </div>
+      </Container>
     </ThemeProvider>
   );
 }
