@@ -13,6 +13,11 @@
   }
 }
 
+/* Only use !important for demo purposes */
+input {
+  color: white !important;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
